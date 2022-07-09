@@ -51,12 +51,19 @@ function game() {
     // create a loop which will play five rounds of the game
     for (let i = 0; i < 5; i++) {
         playerChoice = prompt("Choose: Rock, Paper, or Scissors", ""); // allow user to input his weapon
-        playerSelection = playerChoice.toUpperCase().slice(0, 1) + playerChoice.toLowerCase().slice(1);  // make the user input look beautiful by making the first letter uppercase and others lowercase.
-        playRound(playerSelection, computerPlay());
+        if (playerChoice == "" || playerChoice === null) { // if the player enters empty string or presses escape, then the loop will break.
+            break;
+        } else {
+            playerSelection = playerChoice.toUpperCase().slice(0, 1) + playerChoice.toLowerCase().slice(1);  // make the user input look beautiful by making the first letter uppercase and others lowercase.
+            playRound(playerSelection, computerPlay());
+        }
     } 
-
+    
+    // create an if-statement for cancelling the game
+    if (win === 0 && lose === 0) {
+        console.log("You cancelled the game. Reload the page to begin again");
     // create an if-statement for the tie of the whole game
-    if (win === lose) {
+    } else if (win === lose) {
         console.log("It's a tie, mate :(");
     // create an if-statement for the win of the whole game
     } else if (win > lose) {
