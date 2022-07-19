@@ -1,6 +1,9 @@
 let computerChoice; // create a global variable for the computer that will store values of "Rock", "Paper", or "Scissors".
 let win = 0; // create a global variable that stores the amount of wins.
 let lose = 0; // create a global variable that stores the amount of losses.
+const rock = document.querySelector("#rock"); // assign a variable to the button with ID rock.
+const paper = document.querySelector("#paper"); // assign a variable to the button with ID paper.
+const scissors = document.querySelector("#scissors"); // assign a variable to the button with ID scissors.
 
 // create a function that randomly returns either 'Rock', 'Paper', or 'Scissors'
 function computerPlay() {
@@ -43,5 +46,11 @@ function playRound(playerSelection, computerSelection) {
         return console.log("Something went terribly wrong...");
     }
 }
+
+rock.addEventListener("click", () => playRound("Rock", computerPlay()));
+
+paper.addEventListener("click", () => playRound("Paper", computerPlay()));
+
+scissors.addEventListener("click", () => playRound("Scissors", computerPlay()));
 
 
