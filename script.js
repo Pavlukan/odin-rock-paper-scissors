@@ -36,13 +36,27 @@ function playRound(playerSelection, computerSelection) {
     playerSelection.toUpperCase() === "PAPER" && computerSelection.toUpperCase() === "SCISSORS" || playerSelection.toUpperCase() === "SCISSORS" &&
     computerSelection.toUpperCase() === "ROCK") {
         ++lose; // increment the amount of losses
-        return roundResult.textContent = `You lose! ${computerSelection} beats ${playerSelection}`;
+        if (lose === 5) { // check if the player has lost 5 times
+            roundResult.textContent = `You've lost to a robot, idiot. Your final score is ${win} to ${lose}`;
+            win = 0; // reset the amount of wins and loses
+            lose = 0;
+            return;
+        } else {
+            return roundResult.textContent = `You lose! ${computerSelection} beats ${playerSelection}. Your score is ${win} to ${lose}`;
+        }
     // create an if-statement for winning
     } else if (playerSelection.toUpperCase() === "ROCK" && computerSelection.toUpperCase() === "SCISSORS" || 
     playerSelection.toUpperCase() === "PAPER" && computerSelection.toUpperCase() === "ROCK" || playerSelection.toUpperCase() === "SCISSORS" &&
     computerSelection.toUpperCase() === "PAPER") {
         ++win; // increment the amount of wins
-        return roundResult.textContent = `You win! ${playerSelection} beats ${computerSelection}`;
+        if (win === 5) { // check if the player has won 5 times
+            roundResult.textContent = `You've won. We need more men (women) like you! Your final score is ${win} to ${lose}`;
+            win = 0; // reset the amount of wins and loses
+            lose = 0;
+            return;
+        } else {
+            return roundResult.textContent = `You win! ${playerSelection} beats ${computerSelection}. Your score is ${win} to ${lose}`;
+        }
     } else {
         return roundResult.textContent = "Something went terribly wrong...";
     }
@@ -53,5 +67,7 @@ rock.addEventListener("click", () => playRound("Rock", computerPlay()));
 paper.addEventListener("click", () => playRound("Paper", computerPlay()));
 
 scissors.addEventListener("click", () => playRound("Scissors", computerPlay()));
+
+
 
 
