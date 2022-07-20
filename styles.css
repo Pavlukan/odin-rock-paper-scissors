@@ -11,6 +11,7 @@ body {
     font-size: 50px;
     font-weight: 800;
     background-color: #2A1B3D;
+    padding: 12px;
 }
 
 .header p {
@@ -26,4 +27,6 @@ a {
 a:hover {
     color:#af93eb;
 }
+
+
 
