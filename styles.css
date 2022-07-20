@@ -33,5 +33,16 @@ img {
     width: auto;
 }
 
+.roundResult {
+    padding: 20px;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 400;
+    font-family: "Blackwood Castle";
+    font-style: italic;
+}
+
+
+
 
 
