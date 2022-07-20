@@ -12,6 +12,10 @@ body {
     background-color: #2A1B3D;
 }
 
-
+.header p {
+    font-size: 25px;
+    font-weight: 600;
+    margin: 0px;
+}
 
 
