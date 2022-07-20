@@ -28,5 +28,10 @@ a:hover {
     color:#af93eb;
 }
 
+img {
+    height: 128px;
+    width: auto;
+}
+
 
 
