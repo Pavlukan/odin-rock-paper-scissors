@@ -63,6 +63,14 @@ img:hover {
     margin: 8px;
 }
 
+.main {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
 
 
 
